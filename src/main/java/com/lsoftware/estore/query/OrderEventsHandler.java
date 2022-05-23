@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.lsoftware.estore.core.data.OrderEntity;
 import com.lsoftware.estore.core.data.OrdersRepository;
+import com.lsoftware.estore.core.events.OrderApprovedEvent;
 import com.lsoftware.estore.core.events.OrderCreatedEvent;
 
 @Component
@@ -24,6 +25,19 @@ public class OrderEventsHandler {
         OrderEntity orderEntity = new OrderEntity();
         BeanUtils.copyProperties(event, orderEntity);
  
+        this.ordersRepository.save(orderEntity);
+    }
+    
+    
+    @EventHandler
+    public void on(OrderApprovedEvent event) throws Exception {
+        OrderEntity orderEntity = ordersRepository.findByOrderId(event.getOrderId());
+        
+        if (orderEntity == null) {
+			// Do something
+        	return;
+		}
+        orderEntity.setOrderStatus(event.getOrderStatus());
         this.ordersRepository.save(orderEntity);
     }
     

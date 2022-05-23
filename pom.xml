@@ -49,6 +49,12 @@
 			<artifactId>axon-spring-boot-starter</artifactId>
 			<version>4.5.8</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.17</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
