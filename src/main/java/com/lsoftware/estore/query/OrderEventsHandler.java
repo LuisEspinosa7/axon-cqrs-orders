@@ -9,6 +9,7 @@ import com.lsoftware.estore.core.data.OrderEntity;
 import com.lsoftware.estore.core.data.OrdersRepository;
 import com.lsoftware.estore.core.events.OrderApprovedEvent;
 import com.lsoftware.estore.core.events.OrderCreatedEvent;
+import com.lsoftware.estore.core.events.OrderRejectedEvent;
 
 @Component
 @ProcessingGroup("order-group")
@@ -39,6 +40,13 @@ public class OrderEventsHandler {
 		}
         orderEntity.setOrderStatus(event.getOrderStatus());
         this.ordersRepository.save(orderEntity);
+    }
+    
+    @EventHandler
+    public void on(OrderRejectedEvent event) throws Exception {
+    	 OrderEntity orderEntity = ordersRepository.findByOrderId(event.getOrderId());
+    	 orderEntity.setOrderStatus(event.getOrderStatus());
+         this.ordersRepository.save(orderEntity);
     }
     
 }

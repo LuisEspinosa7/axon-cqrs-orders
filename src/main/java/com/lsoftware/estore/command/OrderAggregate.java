@@ -10,8 +10,10 @@ import org.springframework.beans.BeanUtils;
 
 import com.lsoftware.estore.command.commands.ApproveOrderCommand;
 import com.lsoftware.estore.command.commands.CreateOrderCommand;
+import com.lsoftware.estore.command.commands.RejectOrderCommand;
 import com.lsoftware.estore.core.events.OrderApprovedEvent;
 import com.lsoftware.estore.core.events.OrderCreatedEvent;
+import com.lsoftware.estore.core.events.OrderRejectedEvent;
 import com.lsoftware.estore.core.model.OrderStatus;
 
 @Aggregate
@@ -58,5 +60,20 @@ public class OrderAggregate {
     public void on(OrderApprovedEvent orderApprovedEvent) throws Exception {
         this.orderStatus = orderApprovedEvent.getOrderStatus();
     }
+    
+    
+    @CommandHandler
+    public void  handle(RejectOrderCommand rejectOrderCommand) {   
+    	OrderRejectedEvent orderRejectedEvent = new OrderRejectedEvent(rejectOrderCommand.getOrderId(),
+    			rejectOrderCommand.getReason());
+    	AggregateLifecycle.apply(orderRejectedEvent);
+    }
+    
+    
+    @EventSourcingHandler
+    public void on(OrderRejectedEvent orderRejectedEvent) throws Exception {
+        this.orderStatus = orderRejectedEvent.getOrderStatus();
+    }
+    
     
 }
