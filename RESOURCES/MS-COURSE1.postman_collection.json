@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "e9e7e0c1-c51c-451b-88ae-35cc7f678163",
+		"name": "MS-COURSE1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6500017"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Get Products (API GW)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/products-service/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products-service",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product (API GW)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Product 100\",\r\n    \"price\": 400,\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/products-service/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products-service",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset tables",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/products-service/management/eventProcessor/product-group/reset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"products-service",
+								"management",
+								"eventProcessor",
+								"product-group",
+								"reset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"6d1aac3f-0021-4e38-97ae-60f7effe1ff7\",\r\n    \"quantity\": 1,\r\n    \"addressId\": \"afbb5881-a872-4d13-993c-faaadddddqqa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/orders-service/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"orders-service",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
