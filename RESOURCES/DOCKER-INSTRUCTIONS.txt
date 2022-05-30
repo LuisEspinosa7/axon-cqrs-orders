@@ -1,0 +1,1 @@
+docker run --name axonserver -p 8024:8024 -p 8124:8124 -v "D:\Development\PROJECTS\MS-CQRS-1\Docker-Data\data":/data -v "D:\Development\PROJECTS\MS-CQRS-1\Docker-Data\eventdata":/eventdata -v "D:\Development\PROJECTS\MS-CQRS-1\Docker-Data\config":/config axoniq/axonserver
