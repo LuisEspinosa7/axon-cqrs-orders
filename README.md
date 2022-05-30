@@ -88,7 +88,7 @@ Some pictures of the project on a local environment respectively:
 <table style="width:100%">
   <tr>
     <td>
-  		<img width="450" alt="Image" src="https://user-images.githubusercontent.com/56041525/171011101-5653746e-ccde-4637-9b9e-74ea63ab9886.PNG">
+  		<img width="450" alt="Image" src="https://user-images.githubusercontent.com/56041525/171027655-1b87305e-bb7d-4ab4-9834-a11c8a40409d.png">
 	  </td>
 </table>
 
