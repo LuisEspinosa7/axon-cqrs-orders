@@ -65,15 +65,32 @@ and it was used the following technologies and tools:
   </tr>
 </table>
 
+
 ## Video
 A video exposing the functionality of the proyect in local environment on a Desktop screen.
 
-NOT YET.
+1. https://youtu.be/JUziuCMEX9w
 
 ## Pictures
 Some pictures of the project on a local environment respectively:
 
-NOT YET.
+<table style="width:100%">
+  <tr>
+    <td>
+  		<img width="450" alt="Image" src="https://user-images.githubusercontent.com/56041525/171011101-5653746e-ccde-4637-9b9e-74ea63ab9886.PNG">
+	  </td>
+    <td>
+  	<img width="450" alt="Image" src="https://user-images.githubusercontent.com/56041525/171011153-7983ba0e-3d93-423d-80ee-7dbe2ad67578.PNG">
+    </td>
+  </tr>
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td>
+  		<img width="450" alt="Image" src="https://user-images.githubusercontent.com/56041525/171027655-1b87305e-bb7d-4ab4-9834-a11c8a40409d.png">
+	  </td>
+</table>
 
 ## Installation
 
